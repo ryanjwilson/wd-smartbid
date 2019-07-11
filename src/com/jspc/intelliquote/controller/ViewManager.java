@@ -10,7 +10,7 @@ public class ViewManager {
 	/**
 	 * Constructs an instance of the @ViewManager class.
 	 * 
-	 * @param views the views the @ViewManager will manage
+	 * @param views the collection of views to manage
 	 */
 	
 	public ViewManager(Container views) {
