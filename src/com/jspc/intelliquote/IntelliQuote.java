@@ -4,6 +4,7 @@ import java.awt.CardLayout;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 import javax.swing.UIManager.LookAndFeelInfo;
 
@@ -19,22 +20,7 @@ public class IntelliQuote extends JFrame {
 	public static final String INTERIOR = "INTERIOR ESTIMATE";
 	public static final String EXTERIOR = "EXTERIOR ESTIMATE";
 	
-	
-	/**
-	 * Constructs an instance of the @IntelliQuote class.
-	 */
-	
-	public IntelliQuote() {
-		super();
-		
-		this.setTitle("J&S Painting Contractors");
-	}
-	
-	/**
-	 * Creates, configures, and adds individual views to the UI window.
-	 */
-	
-	public void createAndShowGUI() {
+	private void createAndShowGUI() {
 		JPanel views = new JPanel(new CardLayout());
 		ViewManager manager = new ViewManager(views);
 		
@@ -47,6 +33,7 @@ public class IntelliQuote extends JFrame {
 		// configure the application frame
 		
 		this.add(views);
+		this.setTitle("J&S Painting Contractors");
 		this.setExtendedState(JFrame.MAXIMIZED_BOTH);
 		this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		this.setLocationRelativeTo(null);
@@ -76,6 +63,10 @@ public class IntelliQuote extends JFrame {
 			}
 		}
 		
-		new IntelliQuote().createAndShowGUI();
+		SwingUtilities.invokeLater(new Runnable() {
+			public void run() {
+				new IntelliQuote().createAndShowGUI();
+			}
+		});		
 	}
 }
