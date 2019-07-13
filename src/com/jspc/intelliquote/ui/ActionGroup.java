@@ -8,84 +8,99 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-import javax.swing.border.EmptyBorder;
+
+import com.jspc.intelliquote.constants.Utils;
 
 public class ActionGroup extends JPanel implements ActionListener {
 	private static final long serialVersionUID = 1L;
 	
-	private JTextField searchField;
-	private JButton createButton, deleteButton;
+	private JButton create;
+	private JButton view;
+	private JButton send;
+	private JButton delete;
+	private JTextField search;
 	
 	/**
-	 * Constructs an instance of the @ActionGroup class.
+	 * Creates an instance of this class.
 	 */
 	
 	public ActionGroup() {
-		super(new BorderLayout());
+		super();
 		
-		this.searchField = new JTextField(50);
-		this.createButton = new JButton("New");
-		this.deleteButton = new JButton("Delete");
-		
+		this.create = new JButton("Create Quote");
+		this.view = new JButton("View PDF");
+		this.send = new JButton("Send to Customer");
+		this.delete = new JButton("Delete Quote");
+		this.search = new JTextField(10);
+				
 		this.initialize();
 	}
 	
-	/*
-	 * Dispatches an @ActionEvent to the parent class.
+	/**
+	 * Responds to action events originating within this component.
 	 * 
-	 * @param e the @ActionEvent to be dispatched
+	 * @param e the event
 	 */
-	
+
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		((ActionListener) this.getParent()).actionPerformed(e);		// dispatch event to parent
-	}
-	
-	/**
-	 * Gets the search text field.
-	 * 
-	 * @return the search text field of this component
-	 */
-	
-	public JTextField getSearchField() {
-		return searchField;
-	}
-	
-	/**
-	 * Gets the create button.
-	 * 
-	 * @return the create button of this component
-	 */
-	
-	public JButton getCreateButton() {
-		return createButton;
-	}
-	
-	/**
-	 * Gets the delete button.
-	 * 
-	 * @return the delete button of this component
-	 */
-	
-	public JButton getDeleteButton() {
-		return deleteButton;
+		System.out.println("ActionGroup::actionPerformed");
 	}
 	
 	/*
-	 * Initializes and configures this component and any subcomponents.
+	 * Initializes, configures, and lays out this component and any subcomponents.
 	 */
 	
-	private void initialize() {		
-		JPanel buttons = new JPanel(new GridLayout(0, 2));
-		buttons.add(deleteButton);
-		buttons.add(createButton);
+	private void initialize() {
+		this.setLayout(new BorderLayout(0, 3));
+		this.configureButtons();
+		this.configureSearch();
 		
-		searchField.addActionListener(this);
-		createButton.addActionListener(this);
-		deleteButton.addActionListener(this);
+		JPanel subgroup = new JPanel(new GridLayout(0, 3));
+		subgroup.add(view);
+		subgroup.add(send);
+		subgroup.add(delete);
 		
-		this.add(searchField, BorderLayout.WEST);
-		this.add(buttons, BorderLayout.EAST);
-		this.setBorder(new EmptyBorder(10, 5, 10, 5));
+		this.add(create, BorderLayout.NORTH);
+		this.add(subgroup, BorderLayout.CENTER);
+		this.add(search, BorderLayout.SOUTH);
+	}
+	
+	/*
+	 * Configures the buttons in this component.
+	 */
+	
+	private void configureButtons() {
+		create.setPreferredSize(Utils.BTN_SIZE);
+		create.setForeground(Utils.WHITE);
+		create.setBackground(Utils.CREATE_BTN_BG);
+		create.setFocusable(false);
+		create.addActionListener(this);
+		
+		view.setPreferredSize(Utils.BTN_SIZE);
+		view.setForeground(Utils.WHITE);
+		view.setBackground(Utils.VIEW_BTN_BG);
+		view.setFocusable(false);
+		view.addActionListener(this);
+		
+		send.setPreferredSize(Utils.BTN_SIZE);
+		send.setForeground(Utils.WHITE);
+		send.setBackground(Utils.SEND_BTN_BG);
+		send.setFocusable(false);
+		send.addActionListener(this);
+		
+		delete.setPreferredSize(Utils.BTN_SIZE);
+		delete.setForeground(Utils.WHITE);
+		delete.setBackground(Utils.DELETE_BTN_BG);
+		delete.setFocusable(false);
+		delete.addActionListener(this);
+	}
+	
+	/*
+	 * Configures the search text field in this component.
+	 */
+	
+	private void configureSearch() {
+		search.setPreferredSize(Utils.TEXTFIELD_SIZE);
 	}
 }
