@@ -3,8 +3,6 @@ package com.jspc.intelliquote.view;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.JLabel;
-import javax.swing.JPanel;
 import javax.swing.JSplitPane;
 
 import com.jspc.intelliquote.controller.ViewManager;
@@ -37,7 +35,9 @@ public class Dashboard extends JSplitPane implements ActionListener {
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		System.out.println("Dashboard::actionPerformed");
 		
+		manager.placeholder();
 	}
 	
 	private void initialize() {
@@ -55,8 +55,8 @@ public class Dashboard extends JSplitPane implements ActionListener {
 		
 		/////// end temporary test data
 		
-		QuoteSidebar sidebar = new QuoteSidebar(new ActionGroup(), new QuoteList(new QuoteListModel(columns, customers)));
-		QuoteEditor editor = new QuoteEditor();
+		QuoteSidebar sidebar = new QuoteSidebar(manager, new ActionGroup(manager), new QuoteList(new QuoteListModel(columns, customers)));
+		QuoteEditor editor = new QuoteEditor(manager);
 		
 		this.add(sidebar);
 		this.add(editor);

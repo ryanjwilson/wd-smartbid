@@ -10,10 +10,12 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import com.jspc.intelliquote.constants.Utils;
+import com.jspc.intelliquote.controller.ViewManager;
 
 public class ActionGroup extends JPanel implements ActionListener {
 	private static final long serialVersionUID = 1L;
 	
+	private ViewManager manager;
 	private JButton create;
 	private JButton view;
 	private JButton send;
@@ -24,9 +26,10 @@ public class ActionGroup extends JPanel implements ActionListener {
 	 * Creates an instance of this class.
 	 */
 	
-	public ActionGroup() {
+	public ActionGroup(ViewManager manager) {
 		super();
 		
+		this.manager = manager;
 		this.create = new JButton("Create Quote");
 		this.view = new JButton("View PDF");
 		this.send = new JButton("Send to Customer");
@@ -45,6 +48,8 @@ public class ActionGroup extends JPanel implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		System.out.println("ActionGroup::actionPerformed");
+		
+		manager.placeholder();
 	}
 	
 	/*

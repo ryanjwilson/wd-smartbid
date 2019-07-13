@@ -8,9 +8,12 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.border.EmptyBorder;
 
+import com.jspc.intelliquote.controller.ViewManager;
+
 public class QuoteSidebar extends JPanel implements ActionListener {
 	private static final long serialVersionUID = 1L;
 
+	private ViewManager manager;
 	private ActionGroup actionGroup;
 	private QuoteList quoteList;
 	
@@ -21,9 +24,10 @@ public class QuoteSidebar extends JPanel implements ActionListener {
 	 * @param quoteList the list of records to be rendered
 	 */
 	
-	public QuoteSidebar(ActionGroup actionGroup, QuoteList quoteList) {
+	public QuoteSidebar(ViewManager manager, ActionGroup actionGroup, QuoteList quoteList) {
 		super();
 		
+		this.manager = manager;
 		this.actionGroup = actionGroup;
 		this.quoteList = quoteList;
 		
@@ -39,6 +43,8 @@ public class QuoteSidebar extends JPanel implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		System.out.println("QuoteSidebar::actionPerformed");
+		
+		manager.placeholder();
 	}
 	
 	/*
