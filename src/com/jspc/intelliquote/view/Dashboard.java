@@ -66,9 +66,9 @@ public class Dashboard extends JSplitPane implements ActionListener {
 		/////// end temporary test data
 		
 		ActionGroup actionGroup = new ActionGroup(manager);
-		QuoteListModel quoteModel = new QuoteListModel(columns, customers);
-		QuoteList quoteList = new QuoteList(quoteModel);
-		QuoteSidebar sidebar = new QuoteSidebar(manager, actionGroup, quoteList);
+		QuoteListModel model = new QuoteListModel(columns, customers);
+		QuoteList list = new QuoteList(model);
+		QuoteSidebar sidebar = new QuoteSidebar(manager, actionGroup, list);
 		QuoteEditor editor = new QuoteEditor(manager);
 		
 		this.add(sidebar);
