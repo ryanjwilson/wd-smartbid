@@ -33,12 +33,22 @@ public class Dashboard extends JSplitPane implements ActionListener {
 		this.initialize();
 	}
 	
+	/**
+	 * Responds to action events originating within this component.
+	 * 
+	 * @param e the event
+	 */
+	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		System.out.println("Dashboard::actionPerformed");
 		
 		manager.placeholder();
 	}
+	
+	/*
+	 * Initializes, configures, and lays out this component and any subcomponents.
+	 */
 	
 	private void initialize() {
 		this.setResizeWeight(0.1);
