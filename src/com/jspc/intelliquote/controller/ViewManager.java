@@ -26,4 +26,12 @@ public class ViewManager {
 	public void switchTo(String view) {
 		((CardLayout) views.getLayout()).show(views, view);
 	}
+	
+	/**
+	 * Placeholder controller action triggered by views.
+	 */
+	
+	public void placeholder() {
+		System.out.println("ViewManager::placeholder");
+	}
 }
