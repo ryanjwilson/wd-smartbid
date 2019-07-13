@@ -10,15 +10,13 @@ import javax.swing.UIManager.LookAndFeelInfo;
 
 import com.jspc.intelliquote.controller.ViewManager;
 import com.jspc.intelliquote.view.Dashboard;
-import com.jspc.intelliquote.view.ExteriorEstimate;
-import com.jspc.intelliquote.view.InteriorEstimate;
 
 public class IntelliQuote extends JFrame {
 	private static final long serialVersionUID = 1L;
-	
-	public static final String DASHBOARD = "DASHBAORD";
-	public static final String INTERIOR = "INTERIOR ESTIMATE";
-	public static final String EXTERIOR = "EXTERIOR ESTIMATE";
+		
+	/*
+	 * Creates and shows the application window and its subcomponents.
+	 */
 	
 	private void createAndShowGUI() {
 		JPanel views = new JPanel(new CardLayout());
@@ -26,13 +24,13 @@ public class IntelliQuote extends JFrame {
 		
 		// add child views to the parent container
 		
-		views.add(new Dashboard(manager), DASHBOARD);
-		views.add(new InteriorEstimate(manager), INTERIOR);
-		views.add(new ExteriorEstimate(manager), EXTERIOR);
+//		views.add(new Dashboard(manager), Utils.DASHBOARD_VIEW);
+//		views.add(new Settings(manager), Utils.SETTINGS_VIEW);
 		
 		// configure the application frame
 		
-		this.add(views);
+//		this.add(views);
+		this.add(new Dashboard(manager));
 		this.setTitle("J&S Painting Contractors");
 		this.setExtendedState(JFrame.MAXIMIZED_BOTH);
 		this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
