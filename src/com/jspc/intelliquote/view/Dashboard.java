@@ -41,7 +41,7 @@ public class Dashboard extends JSplitPane implements ActionListener {
 	}
 	
 	private void initialize() {
-		this.setResizeWeight(0.2);
+		this.setResizeWeight(0.1);
 		this.setDividerSize(0);
 		
 		/////// begin temporary test data
