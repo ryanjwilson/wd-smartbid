@@ -18,31 +18,7 @@ public class Address {
 		this.postalCode = postalCode;
 	}
 	
-	public int getNumber() {
-		return number;
-	}
-	
-	public String getStreet() {
-		return street;
-	}
-	
-	public String getType() {
-		return type;
-	}
-	
-	public String getCity() {
-		return city;
-	}
-	
-	public String getState() {
-		return state;
-	}
-	
-	public String getPostalCode() {
-		return postalCode;
-	}
-	
-	public String format() {
+	public String getFormattedAddress() {
 		return number + " " + street + " " + type + ", " + city + ", " + state + " " + postalCode;
 	}
 }
