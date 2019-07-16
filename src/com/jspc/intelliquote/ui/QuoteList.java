@@ -83,7 +83,7 @@ public class QuoteList extends JTable implements TableCellRenderer {
 		Customer customer = (Customer) value;
 				
 		JLabel title = new JLabel(customer.getFormattedName());
-		JLabel subtitle = new JLabel(customer.getAddress().format());
+		JLabel subtitle = new JLabel(customer.getAddress().getFormattedAddress());
 		Border margin = new EmptyBorder(0, 10, 0, 10);
 		
 		title.setBorder(margin);
