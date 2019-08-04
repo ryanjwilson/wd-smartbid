@@ -1,4 +1,4 @@
-package com.jspc.intelliquote.constants;
+package com.jspc.smartbid.constants;
 
 import java.awt.Color;
 import java.awt.Dimension;

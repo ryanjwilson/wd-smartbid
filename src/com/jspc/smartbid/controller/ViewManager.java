@@ -1,4 +1,4 @@
-package com.jspc.intelliquote.controller;
+package com.jspc.smartbid.controller;
 
 import java.awt.CardLayout;
 import java.awt.Container;

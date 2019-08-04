@@ -1,4 +1,4 @@
-package com.jspc.intelliquote.model;
+package com.jspc.smartbid.model;
 
 public class Address {
 	

@@ -1,4 +1,4 @@
-package com.jspc.intelliquote.ui;
+package com.jspc.smartbid.ui;
 
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
@@ -9,8 +9,8 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import com.jspc.intelliquote.constants.Utils;
-import com.jspc.intelliquote.controller.ViewManager;
+import com.jspc.smartbid.constants.Utils;
+import com.jspc.smartbid.controller.ViewManager;
 
 public class ActionGroup extends JPanel implements ActionListener {
 	private static final long serialVersionUID = 1L;
@@ -30,10 +30,10 @@ public class ActionGroup extends JPanel implements ActionListener {
 		super();
 		
 		this.manager = manager;
-		this.create = new JButton("Create Quote");
+		this.create = new JButton("Create Bid");
 		this.view = new JButton("View PDF");
 		this.send = new JButton("Send to Customer");
-		this.delete = new JButton("Delete Quote");
+		this.delete = new JButton("Delete Bid");
 		this.search = new JTextField(10);
 				
 		this.initialize();

@@ -1,4 +1,4 @@
-package com.jspc.intelliquote.ui;
+package com.jspc.smartbid.ui;
 
 import java.awt.Component;
 import java.awt.Graphics;
@@ -13,10 +13,10 @@ import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.TableCellRenderer;
 
-import com.jspc.intelliquote.constants.Utils;
-import com.jspc.intelliquote.model.Customer;
+import com.jspc.smartbid.constants.Utils;
+import com.jspc.smartbid.model.Customer;
 
-public class QuoteList extends JTable implements TableCellRenderer {
+public class BidList extends JTable implements TableCellRenderer {
 	private static final long serialVersionUID = 1L;
 			
 	/**
@@ -25,7 +25,7 @@ public class QuoteList extends JTable implements TableCellRenderer {
 	 * @param model the underlying data model for this table
 	 */
 		
-	public QuoteList(QuoteListModel model) {
+	public BidList(BidListModel model) {
 		super(model);
 		
 		this.initialize();

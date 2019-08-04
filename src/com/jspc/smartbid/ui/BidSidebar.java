@@ -1,4 +1,4 @@
-package com.jspc.intelliquote.ui;
+package com.jspc.smartbid.ui;
 
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
@@ -8,28 +8,28 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.border.EmptyBorder;
 
-import com.jspc.intelliquote.controller.ViewManager;
+import com.jspc.smartbid.controller.ViewManager;
 
-public class QuoteSidebar extends JPanel implements ActionListener {
+public class BidSidebar extends JPanel implements ActionListener {
 	private static final long serialVersionUID = 1L;
 
 	private ViewManager manager;
 	private ActionGroup actionGroup;
-	private QuoteList quoteList;
+	private BidList bidList;
 	
 	/**
 	 * Creates an instance of this class.
 	 * 
 	 * @param actionGroup the button group for manipulating records
-	 * @param quoteList the list of records to be rendered
+	 * @param bideList the list of records to be rendered
 	 */
 	
-	public QuoteSidebar(ViewManager manager, ActionGroup actionGroup, QuoteList quoteList) {
+	public BidSidebar(ViewManager manager, ActionGroup actionGroup, BidList bidList) {
 		super();
 		
 		this.manager = manager;
 		this.actionGroup = actionGroup;
-		this.quoteList = quoteList;
+		this.bidList = bidList;
 		
 		this.initialize();
 	}
@@ -42,7 +42,7 @@ public class QuoteSidebar extends JPanel implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		System.out.println("QuoteSidebar::actionPerformed");
+		System.out.println("BidSidebar::actionPerformed");
 		
 		manager.placeholder();
 	}
@@ -56,6 +56,6 @@ public class QuoteSidebar extends JPanel implements ActionListener {
 		this.setBorder(new EmptyBorder(25, 25, 25, 25));
 		
 		this.add(actionGroup, BorderLayout.NORTH);
-		this.add(new JScrollPane(quoteList), BorderLayout.CENTER);
+		this.add(new JScrollPane(bidList), BorderLayout.CENTER);
 	}
 }

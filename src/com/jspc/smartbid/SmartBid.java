@@ -1,4 +1,4 @@
-package com.jspc.intelliquote;
+package com.jspc.smartbid;
 
 import java.awt.CardLayout;
 
@@ -8,10 +8,10 @@ import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 import javax.swing.UIManager.LookAndFeelInfo;
 
-import com.jspc.intelliquote.controller.ViewManager;
-import com.jspc.intelliquote.view.Dashboard;
+import com.jspc.smartbid.controller.ViewManager;
+import com.jspc.smartbid.view.Dashboard;
 
-public class IntelliQuote extends JFrame {
+public class SmartBid extends JFrame {
 	private static final long serialVersionUID = 1L;
 		
 	/*
@@ -63,7 +63,7 @@ public class IntelliQuote extends JFrame {
 		
 		SwingUtilities.invokeLater(new Runnable() {
 			public void run() {
-				new IntelliQuote().createAndShowGUI();
+				new SmartBid().createAndShowGUI();
 			}
 		});		
 	}

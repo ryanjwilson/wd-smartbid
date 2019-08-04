@@ -1,4 +1,4 @@
-package com.jspc.intelliquote.ui;
+package com.jspc.smartbid.ui;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -6,9 +6,9 @@ import java.awt.event.ActionListener;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import com.jspc.intelliquote.controller.ViewManager;
+import com.jspc.smartbid.controller.ViewManager;
 
-public class QuoteEditor extends JPanel implements ActionListener {
+public class BidEditor extends JPanel implements ActionListener {
 	private static final long serialVersionUID = 1L;
 	
 	private ViewManager manager;
@@ -17,7 +17,7 @@ public class QuoteEditor extends JPanel implements ActionListener {
 	 * Creates an instance of this class.
 	 */
 	
-	public QuoteEditor(ViewManager manager) {
+	public BidEditor(ViewManager manager) {
 		super();
 		
 		this.manager = manager;
@@ -33,12 +33,12 @@ public class QuoteEditor extends JPanel implements ActionListener {
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		System.out.println("QuoteEditor::actionPerformed");
+		System.out.println("BidEditor::actionPerformed");
 		
 		manager.placeholder();
 	}
 	
 	private void initialize() {
-		this.add(new JLabel("Placeholder for QuoteEditor component."));
+		this.add(new JLabel("Placeholder for BidEditor component."));
 	}
 }

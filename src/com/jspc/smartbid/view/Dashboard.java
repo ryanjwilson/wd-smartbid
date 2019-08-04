@@ -1,18 +1,18 @@
-package com.jspc.intelliquote.view;
+package com.jspc.smartbid.view;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JSplitPane;
 
-import com.jspc.intelliquote.controller.ViewManager;
-import com.jspc.intelliquote.model.Address;
-import com.jspc.intelliquote.model.Customer;
-import com.jspc.intelliquote.ui.QuoteListModel;
-import com.jspc.intelliquote.ui.QuoteSidebar;
-import com.jspc.intelliquote.ui.ActionGroup;
-import com.jspc.intelliquote.ui.QuoteEditor;
-import com.jspc.intelliquote.ui.QuoteList;
+import com.jspc.smartbid.controller.ViewManager;
+import com.jspc.smartbid.model.Address;
+import com.jspc.smartbid.model.Customer;
+import com.jspc.smartbid.ui.BidListModel;
+import com.jspc.smartbid.ui.BidSidebar;
+import com.jspc.smartbid.ui.ActionGroup;
+import com.jspc.smartbid.ui.BidEditor;
+import com.jspc.smartbid.ui.BidList;
 
 public class Dashboard extends JSplitPane implements ActionListener {
 	private static final long serialVersionUID = 1L;
@@ -66,10 +66,10 @@ public class Dashboard extends JSplitPane implements ActionListener {
 		/////// end temporary test data
 		
 		ActionGroup actionGroup = new ActionGroup(manager);
-		QuoteListModel model = new QuoteListModel(columns, customers);
-		QuoteList list = new QuoteList(model);
-		QuoteSidebar sidebar = new QuoteSidebar(manager, actionGroup, list);
-		QuoteEditor editor = new QuoteEditor(manager);
+		BidListModel model = new BidListModel(columns, customers);
+		BidList list = new BidList(model);
+		BidSidebar sidebar = new BidSidebar(manager, actionGroup, list);
+		BidEditor editor = new BidEditor(manager);
 		
 		this.add(sidebar);
 		this.add(editor);

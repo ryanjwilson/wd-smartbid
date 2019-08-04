@@ -1,4 +1,4 @@
-package com.jspc.intelliquote.model;
+package com.jspc.smartbid.model;
 
 import java.util.List;
 

@@ -1,10 +1,10 @@
-package com.jspc.intelliquote.ui;
+package com.jspc.smartbid.ui;
 
 import javax.swing.table.AbstractTableModel;
 
-import com.jspc.intelliquote.model.Customer;
+import com.jspc.smartbid.model.Customer;
 
-public class QuoteListModel extends AbstractTableModel {
+public class BidListModel extends AbstractTableModel {
 	private static final long serialVersionUID = 1L;
 	
 	private String[] columns;
@@ -17,7 +17,7 @@ public class QuoteListModel extends AbstractTableModel {
 	 * @param customers a list of values for the data model
 	 */
 	
-	public QuoteListModel(String[] columns, Customer[] customers) {
+	public BidListModel(String[] columns, Customer[] customers) {
 		super();
 		
 		this.columns = columns;
